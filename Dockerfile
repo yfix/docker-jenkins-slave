@@ -8,7 +8,8 @@ MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 RUN locale-gen en_US.UTF-8 && \
     apt-get -q update && \
     DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends \
-		openssh-server && \
+		openssh-server \
+		git && \
     apt-get -q autoremove && \
     apt-get -q clean -y && \
 	rm -rf /var/lib/apt/lists/* && \
